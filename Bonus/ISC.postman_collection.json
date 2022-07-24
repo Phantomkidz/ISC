@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "5b34fba0-4bb8-4f9c-95c6-419a204b5bb4",
+		"name": "ISC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6275945"
+	},
+	"item": [
+		{
+			"name": "Get Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{icsURL}}product?limit=3&page=2",
+					"host": [
+						"{{icsURL}}product"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "Women",
+							"disabled": true
+						},
+						{
+							"key": "style",
+							"value": "B",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "XS",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{icsURL}}order?status=completed",
+					"host": [
+						"{{icsURL}}order"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-07-22 16:05:54",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2022-07-25 16:05:57",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "completed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{icsURL}}product/:productId",
+					"host": [
+						"{{icsURL}}product"
+					],
+					"path": [
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"shippingAddress\": \"15/3\",\r\n    \"orderStatus\":\"\",\r\n    \"startDate\":\"\",\r\n    \"endDate\":\"\",\r\n    \"paidDate\":\"\",\r\n    \"orderList\":[3,4]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{icsURL}}order",
+					"host": [
+						"{{icsURL}}order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
